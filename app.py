@@ -10,7 +10,7 @@ st.title("🧾 Prediksi Risiko Korupsi Tender Pengadaan")
 # Load dataset untuk encoder
 @st.cache_data
 def load_data():
-    return pd.read_csv("C:/Users/Muhammad Zaky T A/Downloads/Machine Learning/Projek ML/data_bersih2.csv")
+    return pd.read_csv("data_bersih2.csv")
 
 data = load_data()
 
@@ -44,8 +44,8 @@ def load_model(path):
     with open(path, "rb") as f:
         return pickle.load(f)
 
-rf_model = load_model("C:/Users/Muhammad Zaky T A/Downloads/Machine Learning/Projek ML/rf_manual_model.pkl")
-svm_model = load_model("C:/Users/Muhammad Zaky T A/Downloads/Machine Learning/Projek ML/svm_manual_model.pkl")
+rf_model = load_model("rf_manual_model.pkl")
+svm_model = load_model("svm_manual_model.pkl")
 
 # Form input user
 st.markdown("### Masukkan data fitur untuk melakukan prediksi:")
@@ -75,3 +75,4 @@ if st.button("🔍 Prediksi Risiko"):
         st.error("⚠️ Risiko korupsi TERDETEKSI!")
     else:
         st.success("✅ Tidak terdeteksi risiko korupsi.")
+
