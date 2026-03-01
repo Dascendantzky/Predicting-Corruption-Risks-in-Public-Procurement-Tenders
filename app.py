@@ -10,7 +10,7 @@ st.title("🧾 Prediksi Risiko Korupsi Tender Pengadaan")
 # Load dataset untuk encoder
 @st.cache_data
 def load_data():
-    return pd.read_csv("data_bersih2.csv")
+    return pd.read_csv("data_bersih.csv")
 
 data = load_data()
 
@@ -75,4 +75,5 @@ if st.button("🔍 Prediksi Risiko"):
         st.error("⚠️ Risiko korupsi TERDETEKSI!")
     else:
         st.success("✅ Tidak terdeteksi risiko korupsi.")
+
 
